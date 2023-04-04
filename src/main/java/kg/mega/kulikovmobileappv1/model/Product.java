@@ -7,22 +7,19 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "tb_user")
+@Table(name = "tb_product")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
-public class User {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String phone;
-
-//    @OneToOne(mappedBy = "user",cascade = CascadeType.ALL)
-//    Basket basket;
+    private String name;
+    private Integer weight;
+    private Long tb_category;
+    private Long tb_discount;
+    private Boolean is_available;
 
 }

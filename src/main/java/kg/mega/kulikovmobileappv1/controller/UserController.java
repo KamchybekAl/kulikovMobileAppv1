@@ -3,10 +3,7 @@ package kg.mega.kulikovmobileappv1.controller;
 import kg.mega.kulikovmobileappv1.model.User;
 import kg.mega.kulikovmobileappv1.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/user")
@@ -19,7 +16,12 @@ public class UserController {
         return userService.saveUser(user);
     }
 
+    @PutMapping("/updateUser")
+    public User update(@RequestBody User user){
+        return userService.updateUser(user);
+    }
 
 
 }
+
 

@@ -1,0 +1,18 @@
+package kg.mega.kulikovmobileappv1.service.impl;
+
+import kg.mega.kulikovmobileappv1.model.Category;
+import kg.mega.kulikovmobileappv1.repository.CategoryRepo;
+import kg.mega.kulikovmobileappv1.service.CategoryService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+@Service
+@RequiredArgsConstructor
+
+public class CategoryServiceImpl implements CategoryService {
+    private final CategoryRepo categoryRepo;
+    @Override
+    public Category saveCategory(Category category) {
+        return categoryRepo.save(category);
+    }
+}
