@@ -12,7 +12,8 @@ import org.springframework.stereotype.Service;
 public class ProductPriceServiceImpl implements ProductPriceService {
     private final ProductPriceRepo productPriceRepo;
     @Override
-    public ProductPrice saveProductPrice(ProductPrice productPrice) {
+    public ProductPrice saveProductPrice(ProductPrice productPrice)
+    {
         return productPriceRepo.save(productPrice);
     }
 }

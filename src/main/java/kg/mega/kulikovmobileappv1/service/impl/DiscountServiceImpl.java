@@ -13,6 +13,7 @@ public class DiscountServiceImpl implements DiscountService {
 private final DiscountRepo discountRepo;
     @Override
     public Discount saveDiscount(Discount discount) {
+
         return discountRepo.save(discount);
     }
 }

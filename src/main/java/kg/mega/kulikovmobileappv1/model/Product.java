@@ -18,8 +18,8 @@ public class Product {
     private Long id;
     private String name;
     private Integer weight;
+    private Boolean is_available;
     private Long tb_category;
     private Long tb_discount;
-    private Boolean is_available;
 
 }

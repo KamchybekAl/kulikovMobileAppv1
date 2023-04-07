@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class DiscountController {
     private final DiscountService discountService;
-
     @PostMapping("/save")
-    public Discount saveDiscount(@RequestBody Discount discount){
+
+    public Discount saveDiscount(@RequestBody Discount discount)
+    {
         return discountService.saveDiscount(discount);
     }
 }

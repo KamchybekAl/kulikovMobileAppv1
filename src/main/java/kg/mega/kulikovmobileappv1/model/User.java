@@ -23,6 +23,6 @@ public class User {
     private String phone;
 
 //    @OneToOne(mappedBy = "user",cascade = CascadeType.ALL)
-//    Basket basket;
+//    private Basket basket;
 
 }
