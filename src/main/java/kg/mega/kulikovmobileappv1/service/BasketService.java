@@ -5,4 +5,7 @@ import kg.mega.kulikovmobileappv1.model.Basket;
 public interface BasketService {
     Basket saveBasket(Basket basket);
 
+    Basket updateBasket (Basket basket);
+
 }
+

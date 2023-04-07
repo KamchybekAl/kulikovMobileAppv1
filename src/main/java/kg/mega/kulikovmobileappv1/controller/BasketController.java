@@ -18,4 +18,8 @@ public class BasketController {
     public Basket saveBasket(@RequestBody Basket basket){
         return basketService.saveBasket(basket);
     }
+    @PostMapping("/updateBasket")
+    public Basket update(@RequestBody Basket basket){
+        return basketService.updateBasket(basket);
+    }
 }

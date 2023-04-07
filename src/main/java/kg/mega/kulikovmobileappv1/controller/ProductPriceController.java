@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/v1/productprice")
 @RequiredArgsConstructor
-public class ProductPriceController {
+public class ProductPriceController<productPrice> {
 
     private final ProductPriceService productPriceService;
     @PostMapping("/save")
@@ -19,4 +19,10 @@ public class ProductPriceController {
     {
         return productPriceService.saveProductPrice(productPrice);
     }
+
+    @PostMapping("/updateProductPrice")
+    public ProductPrice update(@RequestBody ProductPrice productPrice) {
+        return productPriceService.updateProductPrice(productPrice);
+    }
+
 }

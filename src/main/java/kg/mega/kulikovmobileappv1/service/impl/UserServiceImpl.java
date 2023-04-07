@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 @Transactional
+
 public class UserServiceImpl implements UserService {
     private final UserRepo userRepo;
     @Override

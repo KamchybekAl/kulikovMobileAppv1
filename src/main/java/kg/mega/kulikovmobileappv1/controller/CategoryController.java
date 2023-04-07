@@ -18,4 +18,8 @@ public class CategoryController {
     public Category saveCategory(@RequestBody Category category){
         return categoryService.saveCategory(category);
     }
+    @PostMapping("/updateCategory")
+    public Category update(@RequestBody Category category){
+        return categoryService.updateCategory(category);
+    }
 }
