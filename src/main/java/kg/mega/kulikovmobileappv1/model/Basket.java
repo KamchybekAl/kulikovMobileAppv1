@@ -21,23 +21,14 @@ public class Basket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-<<<<<<< HEAD
     private String status;
     @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate createdDate;
 //    @OneToOne(mappedBy = "basket",cascade = CascadeType.ALL)
 //        private User user;
     @OneToMany(cascade = CascadeType.ALL)
-//            @JoinColumn(name = "basket_id")
-=======
-    @JsonFormat(pattern = "dd-MM-yyyy")
-    private LocalDate createdDate;
-    private String status;
-//    @OneToOne(mappedBy = "basket",cascade = CascadeType.ALL)
-//    private User user;
-    @OneToMany(cascade = CascadeType.ALL)
             @JoinColumn(name = "basket_id")
->>>>>>> origin/main
+
     List<Product>productList;
 
 }
