@@ -5,6 +5,9 @@ import kg.mega.kulikovmobileappv1.model.Category;
 public interface CategoryService {
 
     Category saveCategory (Category category);
+<<<<<<< HEAD
 
     Category updateCategory (Category category);
+=======
+>>>>>>> origin/main
 }
