@@ -22,7 +22,12 @@ public class User {
     private String email;
     private String phone;
 
-//    @OneToOne(mappedBy = "user",cascade = CascadeType.ALL)
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "basket_id",referencedColumnName = "id")
 //    private Basket basket;
+
+    @OneToOne(mappedBy = "user")
+    private Basket basket;
+
 
 }

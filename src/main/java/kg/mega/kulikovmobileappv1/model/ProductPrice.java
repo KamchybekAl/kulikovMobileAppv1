@@ -7,7 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "tb_product_price")
 @Getter
@@ -20,10 +21,12 @@ public class ProductPrice {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Double price;
-    @JsonFormat(pattern = "dd-MM-yyyy")
-    private LocalDate startDate;
-    @JsonFormat(pattern = "dd-MM-yyyy")
-    private LocalDate endDate;
-    private Long id_product;
+    @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
+    private LocalDateTime startDate;
+    @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
+    private LocalDateTime endDate;
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
 
 }

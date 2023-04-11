@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class ProductController {
     private final ProductService productService;
+
     @PostMapping("/save")
 
     public Product saveProduct(@RequestBody Product product) {
@@ -20,7 +21,7 @@ public class ProductController {
     }
 
     @PostMapping("/updateProduct")
-    public Product update(@RequestBody Product product){
+    public Product update(@RequestBody Product product) {
         return productService.updateProduct(product);
     }
 }

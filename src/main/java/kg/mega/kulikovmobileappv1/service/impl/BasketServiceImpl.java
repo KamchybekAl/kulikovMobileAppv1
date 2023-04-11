@@ -25,4 +25,11 @@ public class BasketServiceImpl implements BasketService {
         updatedBasket.setCreatedDate(basket.getCreatedDate());
         return updatedBasket;
     }
+
+    @Override
+    public Basket findById(Long id) {
+        return basketRepo.findById(id).get();
+    }
+
+
 }

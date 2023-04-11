@@ -7,5 +7,7 @@ public interface BasketService {
 
     Basket updateBasket (Basket basket);
 
+    Basket findById(Long id);
+
 }
 

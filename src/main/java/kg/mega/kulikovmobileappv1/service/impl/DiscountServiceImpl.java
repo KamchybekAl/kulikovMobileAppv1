@@ -16,4 +16,9 @@ private final DiscountRepo discountRepo;
 
         return discountRepo.save(discount);
     }
+
+    @Override
+    public Discount findById(Long id) {
+        return discountRepo.findById(id).get();
+    }
 }

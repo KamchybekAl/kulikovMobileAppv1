@@ -1,6 +1,7 @@
 package kg.mega.kulikovmobileappv1.service.impl;
 
 import jakarta.transaction.Transactional;
+import kg.mega.kulikovmobileappv1.model.Product;
 import kg.mega.kulikovmobileappv1.model.ProductPrice;
 import kg.mega.kulikovmobileappv1.repository.ProductPriceRepo;
 import kg.mega.kulikovmobileappv1.service.ProductPriceService;
@@ -27,5 +28,15 @@ public class ProductPriceServiceImpl implements ProductPriceService {
         updatedProductPrice.setEndDate(productPrice.getEndDate());
 
         return updatedProductPrice;
+    }
+
+    @Override
+    public ProductPrice findById(Long id) {
+        return productPriceRepo.findById(id).get();
+    }
+
+    @Override
+    public ProductPrice findByProduct(Product product) {
+        return productPriceRepo.findByProduct(product);
     }
 }

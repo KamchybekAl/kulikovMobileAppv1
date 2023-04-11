@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 public class ProductServiceImpl implements ProductService {
     private final ProductRepo productRepo;
+
     @Override
     public Product saveProduct(Product product) {
         return productRepo.save(product);
@@ -26,6 +27,4 @@ public class ProductServiceImpl implements ProductService {
         updatedProduct.setIs_available(product.getIs_available());
         return updatedProduct;
     }
-
-
 }

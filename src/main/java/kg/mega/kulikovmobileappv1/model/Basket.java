@@ -24,11 +24,15 @@ public class Basket {
     private String status;
     @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate createdDate;
-//    @OneToOne(mappedBy = "basket",cascade = CascadeType.ALL)
-//        private User user;
-    @OneToMany(cascade = CascadeType.ALL)
-            @JoinColumn(name = "basket_id")
 
-    List<Product>productList;
+    @OneToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "user_id",referencedColumnName = "id")
+    private User user;
+    @OneToOne(mappedBy = "basket")
+    private Order order;
+
+    @OneToMany(mappedBy = "basket",cascade = CascadeType.ALL)
+    private List<Product>productList;
+
 
 }

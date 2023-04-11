@@ -6,24 +6,28 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Entity
-@Table(name = "tb_product")
+@Table(name = "tb_order")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Product {
+public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private Integer weight;
-    private Boolean is_available;
-    @ManyToOne
-    @JoinColumn(name = "category_id",referencedColumnName = "id")
-    private Category category;
-    @ManyToOne
+    private LocalDateTime dateTime;
+    private Double totalPrice;
+    private Double priceWithDiscount;
+    private Double bonusPlus;
+    private Double bonusMinus;
+    private Boolean isPaid;
+    private Double defaultPrice;
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "basket_id",referencedColumnName = "id")
     private Basket basket;
+
 
 }
